@@ -104,3 +104,14 @@ h3 {
   text-align: center;
   color: $black;
 }
+
+.pokemon_list {
+  float: left;
+  margin-top: 25px;
+}
+
+.pokemon_detail {
+  float: right;
+  margin-top: 10px;
+  margin-right: 60px;
+}

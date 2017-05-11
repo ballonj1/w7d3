@@ -1,5 +1,7 @@
 import React from 'react';
 import { PokemonIndexItem } from './pokemon_index_item';
+import  PokemonDetailContainer  from './pokemon_detail_container';
+import { Route } from 'react-router-dom';
 
 class PokemonIndex extends React.Component {
   constructor(props) {
@@ -7,10 +9,7 @@ class PokemonIndex extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
-    this.props.requestAllPokemon().then(() =>{
-    console.log(this.props.pokemon);
-  });
+    this.props.requestAllPokemon();
   }
 
   render(){
@@ -20,9 +19,10 @@ class PokemonIndex extends React.Component {
 
     return(
       <div>
-        <ul>
+        <ul className="pokemon_list">
           { pokemonLi }
         </ul>
+        <Route path="/pokemon/:pokemonId" component={ PokemonDetailContainer } />
       </div>
     );
   }
