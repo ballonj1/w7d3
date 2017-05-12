@@ -1,0 +1,14 @@
+debugger;
+const items = this.props.poke.items.map((item, idx) => (
+  <Link to={`/pokemon/${item.pokemon_id}/item/${item.id}`}>
+    <li key={item.id}>{item.name}
+      <br />
+      <img width="50px" src={item.image_url} alt="Item"/>
+    </li>
+  </Link>
+));
+
+
+<li><Route path="/pokemon/:pokemonId/item/:itemId"
+    component={ItemDetailContainer} /></li>
+<li>{items}</li>

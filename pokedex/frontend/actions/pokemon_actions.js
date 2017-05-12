@@ -2,6 +2,7 @@ import * as APIUtil from '../util/api_util';
 
 export const RECEIVE_ALL_POKEMON = "RECEIVE_ALL_POKEMON";
 export const RECEIVE_SINGLE_POKEMON = "RECEIVE_SINGLE_POKEMON";
+export const SPAWN_SINGLE_POKEMON = "SPAWN_SINGLE_POKEMON";
 
 export const receiveAllPokemon = pokemon => ({
   type: RECEIVE_ALL_POKEMON,
@@ -18,7 +19,17 @@ export const receiveSinglePokemon = (pokemon) => ({
   pokemon
 });
 
+export const spawnSinglePokemon = (pokemon) => ({
+  type: SPAWN_SINGLE_POKEMON,
+  pokemon
+});
+
 export const requestSinglePokemon = (pokemon) => (dispatch) => {
   return APIUtil.fetchSinglePokemon(pokemon)
     .then(poke => dispatch(receiveSinglePokemon(poke)));
 };
+
+export const makeSinglePokemon = (pokemon) => (dispatch) => {
+  return APIUtil.createSinglePokemon(pokemon)
+  .then(poke => dispatch(spawnSinglePokemon(poke)));
+}
