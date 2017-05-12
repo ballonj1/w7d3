@@ -41,6 +41,9 @@ class PokemonForm extends React.Component {
     this.props.makeSinglePokemon(this.state);
   }
 
+  git filter-branch -f --env-filter "GIT_AUTHOR_NAME='John Ballon'; GIT_AUTHOR_EMAIL='ballonj1@tcnj.edu'; GIT_COMMITTER_NAME='John Ballon'; GIT_COMMITTER_EMAIL='ballonj1@tcnj.edu';" HEAD
+
+
 
 
   render(){
